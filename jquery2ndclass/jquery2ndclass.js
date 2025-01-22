@@ -1,0 +1,10 @@
+$("document").ready(function(){
+    $("p").hide()
+    $("h1").html("voldy");
+     $("h1").click(function(){
+        $("p").fadeIn("3000")
+     })
+     $("button").click(function(){
+        $("h1").fadeOut()
+     })
+    });
