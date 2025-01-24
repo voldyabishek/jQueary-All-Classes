@@ -1,0 +1,78 @@
+<html>
+
+<head>
+    <title>jQuearyaniamtion</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <style>
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .box {
+            width: 100px;
+            height: 100px;
+            background-color: yellow;
+            margin: 20px auto;
+        }
+
+        .hidden {
+            background-color: red;
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <h1>jQueary Animation Examples</h1>
+        <button id="fadeInBtn">Fade In</button>
+        <button id="fadeOutBtn">Fade Out</button>
+        <button id="slideUpBtn">slide Up</button>
+        <button id="slideDownBtn">Slide down</button>
+        <button id="animateBtn">Animate</button>
+
+        <div class="box hidden" id="fadeBox"></div>
+        <div class="box " id="slideBox"></div>
+        <div class="box " id="animateBox"></div>
+    </div>
+    <script>
+        $(document).ready(function () {
+            $("#fadeInBtn").click(function () {
+                $("#fadeBox").fadeIn(1000);
+            });
+             
+            $("#fadeOutBtn").click(function(){
+                $("#fadeBox").fadeOut(1000)
+            });
+
+            $("#slideUpBtn").click(function()
+            {
+                $("#slideBox").slideUp(1000);
+            });
+
+            $("#slideDownBtn").click(function()
+            {
+                $("#slideBox").slideDown(1000);
+            });
+            $("#animateBtn").click(function(){
+                $("#animateBox").animate(
+                    {
+                        width:"200px",
+                        height:"200px",
+                        marginLeft:"50px",
+                    },
+                1000,function()
+                {
+                    //animation complete
+                    $(this).css('background-color','green');
+                });
+            });
+        })
+    </script>
+</body>
+
+</html>
