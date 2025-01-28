@@ -1,0 +1,27 @@
+body{
+    font-family: Arial,sans-serif;
+}
+
+#box{
+    Width:100px;
+    height:100px;
+    background-color:red;
+    position:relative;
+    margin:20px;
+   display:none;   /* initially hide-->( code stating le display none kuduthu hide pantrathu)*/
+}
+
+#message{
+    margin-top: 20px;
+    font-Weight:bold;
+}
+.item{
+    padding:10px;
+    border:1px solid yellow;
+   margin:5px 0;
+   cursor:pointer;
+}
+
+.highlight{
+    background-color:yellow;
+}
