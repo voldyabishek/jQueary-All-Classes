@@ -34,6 +34,91 @@ $(document).ready(function () {
     });
 
     
+//7.add item
+ $('#addItem').click(function() {
+    $('#itemContainer').append('<div class="item">New Item</div>');  //apend mean(add)pantrathu
+ });
+
+//8.remove item
+$('#removeItem').click(function(){
+    $('#itemContainer .item:last').remove();
+});
+
+//9.chnage css
+$('#cssChange').click(function() {
+    $('#box').css
+    ({
+        'background-color':'yellow',
+        'border':'5px solid red',
+
+    });
+});
+
+//10.change text of the meassage
+
+ $('#textChange').click(function(){
+    $('#message').text('Text Has Been changed');
+ });
+
+ //11.change input  value
+     $('#inputChange').click(function(){
+        $('#inputData').val('Changed Input');
+     });
+
+//12.clear input field
+   $('#inputClear').click(function(){
+    $('#inputData').val('');
+   });
 
 
+//13.clone the box
+$('#Clone').click(function(){
+    $('#box').clone().appendTo('#itemContainer').fadeIn();
+});
+
+//14.Detach the box
+ $('#Detach').click(function(){
+    $('#box').detach();
+ });
+
+ //15.append Item
+  $('#Append').click(function(){
+    $('#itemContainer').append('<div class="Item">Append Item</div>');
+  });
+
+//16/Prepand item
+$('#Prepend').click(function(){
+    $('#itemContainer').prepend('<div class="Item">Prepand Item</div>');
+
+});
+
+//17.reset animation
+$('#AnimationReset').click(function(){
+    $('#box').stop(true,true).css({left:'0',opacity:'1'});
+});
+
+//18.Handle form Submission(html la ulla input form la kudukura data va mela show pana vaikirathu)
+ $('#dataForm').on('submit',function(e){
+    e.preventDefault();
+    const inputData = $('#inputData').val();
+    $('#message').text(`you entered:${inputData}`);
+    $('#inputData').val('');
+ });
+
+ 
+//19.Ajax request to fetch random user data
+  $('#FetchData').click(function(){
+    $.ajax(
+        {
+            url: 'https://jsonplaceholder.typicode.com/users/1',
+            method: 'GET',
+            success:function(data){
+                $('#message').text(`Name:${data.name},Email:${data.email}`);
+            },
+            error:function(){
+                $('#message').text('Faild to fetch data');
+            }
+        }
+    )
+  })
 });
